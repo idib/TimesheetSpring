@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/TimeSheet</property>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <mapping class="com.Intership.Timesheet.Entities.AssessmentEntity"/>
+        <mapping class="com.Intership.Timesheet.Entities.DepartmentEntity"/>
+        <mapping class="com.Intership.Timesheet.Entities.EmployeeEntity"/>
+        <mapping class="com.Intership.Timesheet.Entities.MonthsEntity"/>
+        <mapping class="com.Intership.Timesheet.Entities.WorkCalendarDaysEntity"/>
+        <mapping class="com.Intership.Timesheet.Entities.YearEntity"/>
+        <!-- <property name="connection.username"/> -->
+        <!-- <property name="connection.password"/> -->
+
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+    </session-factory>
+</hibernate-configuration>
