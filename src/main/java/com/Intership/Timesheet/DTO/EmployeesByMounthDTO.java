@@ -1,7 +1,5 @@
 package com.Intership.Timesheet.DTO;
 
-import com.Intership.Timesheet.Entities.WorkCalendarDaysEntity;
-
 import java.util.List;
 
 public class EmployeesByMounthDTO {
@@ -10,7 +8,8 @@ public class EmployeesByMounthDTO {
 	private String surname;
 	private String patronymic;
 	private String position;
-	private List<WorkCalendarDaysEntity> workCalendarDaysEntityList;
+	private List<String> workCalendarDaysEntityList;
+	private List<ResultAssesmentDTO> result;
 
 	public int getId() {
 		return id;
@@ -52,11 +51,19 @@ public class EmployeesByMounthDTO {
 		this.position = position;
 	}
 
-	public List<WorkCalendarDaysEntity> getWorkCalendarDaysEntityLint() {
+	public List<String> getWorkCalendarDaysEntityLint() {
 		return workCalendarDaysEntityList;
 	}
 
-	public void setWorkCalendarDaysEntityLint(List<WorkCalendarDaysEntity> workCalendarDaysEntityLint) {
+	public void setWorkCalendarDaysEntityLint(List<String> workCalendarDaysEntityLint) {
 		this.workCalendarDaysEntityList = workCalendarDaysEntityLint;
+	}
+
+	public List<ResultAssesmentDTO> getResult() {
+		return result;
+	}
+
+	public void setResult(List<ResultAssesmentDTO> result) {
+		this.result = result;
 	}
 }

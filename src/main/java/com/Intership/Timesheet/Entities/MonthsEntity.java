@@ -10,7 +10,7 @@ public class MonthsEntity {
 	private String name;
 	private int countDay;
 	private String result;
-	private YearEntity yearByYearId;
+	private YearEntity year;
 
 	@Id
 	@Column(name = "id")
@@ -54,12 +54,12 @@ public class MonthsEntity {
 
 	@ManyToOne
 	@JoinColumn(name = "year_id", referencedColumnName = "id", nullable = false)
-	public YearEntity getYearEntity() {
-		return yearByYearId;
+	public YearEntity getYear() {
+		return year;
 	}
 
-	public void setYearEntity(YearEntity yearEntity) {
-		this.yearByYearId = yearEntity;
+	public void setYear(YearEntity yearEntity) {
+		this.year = yearEntity;
 	}
 
 	@Override

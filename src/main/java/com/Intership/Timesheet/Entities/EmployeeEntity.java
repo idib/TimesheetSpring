@@ -1,7 +1,6 @@
 package com.Intership.Timesheet.Entities;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -12,7 +11,7 @@ public class EmployeeEntity {
 	private String surname;
 	private String patronymic;
 	private String position;
-	private DepartmentEntity departmentByDepartmentId;
+	private DepartmentEntity department;
 
 	@Id
 	@Column(name = "id")
@@ -83,11 +82,11 @@ public class EmployeeEntity {
 
 	@ManyToOne
 	@JoinColumn(name = "department_id", referencedColumnName = "id", nullable = false)
-	public DepartmentEntity getDepartmentByDepartmentId() {
-		return departmentByDepartmentId;
+	public DepartmentEntity getDepartment() {
+		return department;
 	}
 
-	public void setDepartmentByDepartmentId(DepartmentEntity departmentByDepartmentId) {
-		this.departmentByDepartmentId = departmentByDepartmentId;
+	public void setDepartment(DepartmentEntity departmentByDepartmentId) {
+		this.department = departmentByDepartmentId;
 	}
 }

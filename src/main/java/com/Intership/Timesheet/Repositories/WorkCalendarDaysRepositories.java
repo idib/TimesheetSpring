@@ -1,14 +1,13 @@
 package com.Intership.Timesheet.Repositories;
 
-import com.Intership.Timesheet.Entities.EmployeeEntity;
-import com.Intership.Timesheet.Entities.MonthsEntity;
-import com.Intership.Timesheet.Entities.WorkCalendarDaysEntity;
+import com.Intership.Timesheet.Entities.*;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 
@@ -18,4 +17,25 @@ public interface WorkCalendarDaysRepositories extends CrudRepository<WorkCalenda
 
 
 	List<WorkCalendarDaysEntity> findWorkCalendarDaysEntitiesByEmployeeAndMonth(EmployeeEntity employeeId, MonthsEntity monthId);
+
+//
+//	@Query(value = "select assessment_id, count(*) from work_calendar_days where employee_id = 1 and months_id = 1 group by assessment_id order by assessment_id",
+//			nativeQuery = true)
+//	Map<AssessmentEntity,Integer> countByAssessmentWhereEmployeeAndMonth(EmployeeEntity employeeId, MonthsEntity monthId);
+
+
+//	@Query("SELECT " +
+//			"    new com.Intership.Timesheet.DTO.ResultAssesmentDTO(a.value, count(v)) " +
+//			"from work_calendar_days w " +
+//			"join assessment a on w.assessment_id = a.id  " +
+//			"where " +
+//			"      w.employee_id = ?1 and " +
+//			"        w.months_id = ?2 " +
+//			"GROUP BY " +
+//			"    w.assessment_id " +
+//			"Order by " +
+//			"    w.assessment_id ")
+//	List<ResultAssesmentDTO> findResultByEmployeeAndMonth(EmployeeEntity employeeId, MonthsEntity monthId);
+
+
 }
