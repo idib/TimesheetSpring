@@ -7,6 +7,17 @@
             max-width: 100%;
             overflow-x: auto;
         }
+
+        select::-ms-expand {	display: none; }
+        select{
+            -webkit-appearance: none;
+            appearance: none;
+            padding: 5px !important;
+        }
+        td, th {
+            padding: 1px !important;
+            text-align: center
+        }
     </style>
 
     <meta charset="UTF-8">
@@ -76,7 +87,14 @@
                                 <td>{{id}}</td>
 
                                 {{#workCalendarDaysEntityList}}
-                                <td>{{.}}</td>
+                                <td>
+                                    <select class="form-control">
+                                        <option disabled>" "</option>
+                                        {{#assessmentList}}
+                                        <option value="{{id}}">{{value}}</option>
+                                        {{/assessmentList}}
+                                    </select>
+                                </td>
                                 {{/workCalendarDaysEntityList}}
 
                                 <td>

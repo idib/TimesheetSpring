@@ -35,6 +35,9 @@ public class IndexController {
 	private DepartmentRepositories departmentRepositories;
 
 	@Autowired
+	private AssessmentRepositories assessmentRepositories;
+
+	@Autowired
 	private ModelMapper modelMapper;
 
 
@@ -70,9 +73,11 @@ public class IndexController {
 
 		Iterable<DepartmentEntity> departmentList = departmentRepositories.findAll();
 		Iterable<YearEntity> yearList = yearRepositories.findAll();
+		Iterable<AssessmentEntity> assessmentList = assessmentRepositories.findAll();
 		model.addObject("departmentList", departmentList);
 		model.addObject("currentDepId", departmentId);
 		model.addObject("yearList", yearList);
+		model.addObject("assessmentList", assessmentList);
 
 
 		Optional<YearEntity> yearOpt = yearRepositories.findById(yearId);
