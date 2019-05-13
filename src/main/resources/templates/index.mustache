@@ -8,17 +8,22 @@
             overflow-x: auto;
         }
 
-        select::-ms-expand {	display: none; }
-        select{
+        select::-ms-expand {
+            display: none;
+        }
+
+        select {
             -webkit-appearance: none;
             appearance: none;
             padding: 5px !important;
         }
+
         td, th {
             padding: 1px !important;
             text-align: center
         }
     </style>
+
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -88,11 +93,11 @@
 
                                 {{#workCalendarDaysEntityList}}
                                 <td>
-                                    <select class="form-control">
-                                        <option disabled>" "</option>
-                                        {{#assessmentList}}
-                                        <option value="{{id}}">{{value}}</option>
-                                        {{/assessmentList}}
+                                    <select class="form-control" data-path="{{path}}"  onchange="saveSelectes(this);" >
+                                        <option>_</option>
+                                        {{#assassmentList}}
+                                        <option {{#isSelected}}selected{{/isSelected}} value="{{id}}">{{value}}</option>
+                                        {{/assassmentList}}
                                     </select>
                                 </td>
                                 {{/workCalendarDaysEntityList}}
@@ -114,5 +119,18 @@
         {{/currentDepId}}
     </div>
 </div>
+<script>
+    function saveSelectes(selection){
+        console.log(selection);
+        console.log($(selection).attr("data-path")+$(selection).val().toString());
+        $.get(
+            $(selection).attr("data-path")+$(selection).val().toString(),
+            {},
+            function(data) {
+                console.log(data);
+            }
+        );
+    }
+</script>
 </body>
 </html>

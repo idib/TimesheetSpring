@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Repository
 
@@ -16,7 +17,9 @@ public interface WorkCalendarDaysRepositories extends CrudRepository<WorkCalenda
 //	List<WorkCalendarDaysEntity> findByMonthsByMonthsIdAndEmployeeByEmployeeIdOrderByDay(MonthsEntity monthsEntity, EmployeeEntity employeeEntity);
 
 
-	List<WorkCalendarDaysEntity> findWorkCalendarDaysEntitiesByEmployeeAndMonth(EmployeeEntity employeeId, MonthsEntity monthId);
+	List<WorkCalendarDaysEntity> findWorkCalendarDaysEntitiesByEmployeeAndMonthOrderByDay(EmployeeEntity employeeId, MonthsEntity monthId);
+
+	Optional<WorkCalendarDaysEntity> findWorkCalendarDaysEntityByEmployeeAndMonthAndDay(EmployeeEntity employeeId, MonthsEntity monthId, int day);
 
 //
 //	@Query(value = "select assessment_id, count(*) from work_calendar_days where employee_id = 1 and months_id = 1 group by assessment_id order by assessment_id",

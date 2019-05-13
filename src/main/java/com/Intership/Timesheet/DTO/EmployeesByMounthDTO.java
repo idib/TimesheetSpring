@@ -8,7 +8,7 @@ public class EmployeesByMounthDTO {
 	private String surname;
 	private String patronymic;
 	private String position;
-	private List<String> workCalendarDaysEntityList;
+	private List<AssassmentCellDTO> workCalendarDaysEntityList;
 	private List<ResultAssesmentDTO> result;
 
 	public int getId() {
@@ -51,11 +51,11 @@ public class EmployeesByMounthDTO {
 		this.position = position;
 	}
 
-	public List<String> getWorkCalendarDaysEntityLint() {
+	public List<AssassmentCellDTO> getWorkCalendarDaysEntityLint() {
 		return workCalendarDaysEntityList;
 	}
 
-	public void setWorkCalendarDaysEntityLint(List<String> workCalendarDaysEntityLint) {
+	public void setWorkCalendarDaysEntityLint(List<AssassmentCellDTO> workCalendarDaysEntityLint) {
 		this.workCalendarDaysEntityList = workCalendarDaysEntityLint;
 	}
 
