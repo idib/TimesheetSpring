@@ -21,7 +21,7 @@
 <body>
 <div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-md-1 col-sm-4">
+        <div class="col-md-6 col-sm-12">
             <h2 style="word-wrap: break-word">департаменты</h2>
             <ul class="nav nav-pills nav-stacked">
                 {{#departmentList}}
@@ -29,21 +29,24 @@
                 {{/departmentList}}
             </ul>
         </div>
-        <div class="col-md-11 col-sm-8">
+        {{#currentDepId}}
+        <div class="col-md-6 col-sm-12">
             <h2>Года</h2>
-            <ul>
-                {{#currentDepId}}
+            <ul class="nav nav-pills nav-stacked">
                 {{#yearList}}
                 <li><a href="/department/{{currentDepId}}/year/{{id}}">{{name}}</a></li>
                 {{/yearList}}
-                {{/currentDepId}}
             </ul>
+        </div>
+        <div class="col-md-12 col-sm-12">
             <h2>Месяцы</h2>
             <ul class="nav nav-tabs">
                 {{#Months}}
                 <li class="{{#isActive}}active{{/isActive}}"><a data-toggle="tab" href="#{{name}}">{{name}}</a></li>
                 {{/Months}}
             </ul>
+        </div>
+        <div class="col-md-12 col-sm-12">
             <h2>Табель</h2>
             <div class="tab-content">
                 {{#Months}}
@@ -67,7 +70,7 @@
                             {{#employeesByMounthDTOS}}
                             <tr>
 
-                                <td>{{surname}} {{name}} {{patronymic}}</td>
+                                <td>{{surname}} {{name}} <br> {{patronymic}}</td>
                                 <td>{{position}}</td>
                                 <td>{{id}}</td>
 
@@ -89,6 +92,7 @@
                 {{/Months}}
             </div>
         </div>
+        {{/currentDepId}}
     </div>
 </div>
 </body>

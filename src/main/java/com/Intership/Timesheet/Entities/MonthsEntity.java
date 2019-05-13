@@ -42,16 +42,6 @@ public class MonthsEntity {
 		this.countDay = countDay;
 	}
 
-	@Basic
-	@Column(name = "result")
-	public String getResult() {
-		return result;
-	}
-
-	public void setResult(String result) {
-		this.result = result;
-	}
-
 	@ManyToOne
 	@JoinColumn(name = "year_id", referencedColumnName = "id", nullable = false)
 	public YearEntity getYear() {
