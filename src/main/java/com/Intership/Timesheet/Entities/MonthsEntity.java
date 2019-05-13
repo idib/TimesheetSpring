@@ -9,7 +9,6 @@ public class MonthsEntity {
 	private int id;
 	private String name;
 	private int countDay;
-	private String result;
 	private YearEntity year;
 
 	@Id
@@ -59,12 +58,11 @@ public class MonthsEntity {
 		MonthsEntity that = (MonthsEntity) o;
 		return id == that.id &&
 				countDay == that.countDay &&
-				Objects.equals(name, that.name) &&
-				Objects.equals(result, that.result);
+				Objects.equals(name, that.name);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id, name, countDay, result);
+		return Objects.hash(id, name, countDay);
 	}
 }
